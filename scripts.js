@@ -3,16 +3,22 @@ $(document).ready(function() {
 var difNames = ["Besaid", "Luca", "Djose", "Thunder Plains", "Mt. Gagazet"];
 var difLevel = ["very easy", "easy", "medium", "advanced", "expert"];
 var difficulty;
+
 var veryEasyCount;
-var vehide
+var vehide = 0;
+
 var easyCount;
-var ehide;
+var ehide = 0;
+
 var mediumCount;
-var mhide;
+var mhide = 0;
+
 var advancedCount;
-var ahide
+var ahide = 0;
+
 var expertCount;
-var exhide;
+var exhide = 0;
+
 var j=0;
 var number = 20;
 
@@ -28,19 +34,21 @@ function difficultylvl(){
     }
 //this will hide buttons if we get enough points in a particular catagory the sequential times around
     if(veryEasyCount == Questions[vehide].length){
-        console.log(veryEasyCount);
         $("#difBtn" + vehide).attr("class", "hidden");
-    }else if(difficulty == Questions[ehide].length){
+    }
+    if(easyCount == Questions[ehide].length){
         $("#difBtn" + ehide).attr("class", "hidden");
-    }else if(difficulty == Questions[mhide].length){
+    }
+    if(mediumCount == Questions[mhide].length){
         $("#difBtn" + mhide).attr("class", "hidden");
-    }else if(difficulty == Questions[ahide].length){
+    }
+    if(advancedCount == Questions[ahide].length){
         $("#difBtn" + ahide).attr("class", "hidden");
-    }else if(difficulty == Questions[exhide].length){
+    }
+    if(expertCount == Questions[exhide].length){
         $("#difBtn" + exhide).attr("class", "hidden");
     }
 }
-
 //when click to start create difficulty screen
 $("body").on("click", ".origin", function(){
     $(".theBigOne").empty();
@@ -50,17 +58,22 @@ $("body").on("click", ".origin", function(){
 //chosing difficulty level and prepping our appropriate count tracker variables
 $("body").on("click", ".difBtn", function(){
     difficulty = $(this).attr("data-level");
+    j=0;
     gameStart();
     populate();
     if(difficulty == 0){
         veryEasyCount = 0;
-    }else if(difficulty == 1){
+    }
+    if(difficulty == 1){
         easyCount = 0;
-    }else if(difficulty == 2){
+    }
+    if(difficulty == 2){
         mediumCount = 0;
-    }else if(difficulty == 3){
+    }
+    if(difficulty == 3){
         advancedCount = 0;
-    }else if(difficulty == 4){
+    }
+    if(difficulty == 4){
         expertCount = 0;
     }
 })
@@ -108,27 +121,27 @@ $("body").on("click", ".ansLo", function(){
         j++;
         if(difficulty == 0){
             veryEasyCount ++;
-            if(veryEasyCount == Questions[difficulty].length){
+            if(veryEasyCount >= Questions[difficulty].length){
                 vehide = difficulty;
             }
         }else if(difficulty == 1){
             easyCount++;
-            if(easyCount == Questions[difficulty].length){
+            if(easyCount >= Questions[difficulty].length){
                 ehide = difficulty;
             }
         }else if(difficulty == 2){
             mediumCount++;
-            if(mediumCount == Questions[difficulty].length){
+            if(mediumCount >= Questions[difficulty].length){
                 mhide = difficulty;
             }
         }else if(difficulty == 3){
             advancedCount++;
-            if(advancedCount == Questions[difficulty].length){
+            if(advancedCount >= Questions[difficulty].length){
                 ahide = difficulty;
             }
         }else if(difficulty == 4){
             expertCount++;
-            if(expertCount == Questions[difficulty].length){
+            if(expertCount >= Questions[difficulty].length){
                 exhide = difficulty;
             }
         }

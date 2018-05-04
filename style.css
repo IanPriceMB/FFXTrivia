@@ -1,22 +1,66 @@
-.difBtn{
+body{
+    widows: 100%;
+}
+h1, p , button{
+    text-align: center;
+}
+.origin{
+    border-radius: 8px;
+    background-color: blue;
+    color:white;
+    margin: 10px 40%;
+    width: 20%;
+}
+.difBtn, .question{
     width: 90%;
     text-align: center;
     margin: 10px auto;
+    background-color: black;
+    border: white;
+    border-style: solid;
+    color: white;
+}
+.question{
+    width: 90%;
+    text-align: center;
+    margin: 10px auto;
+    background-color: black;
+    border: white;
+    border-style: solid;
+    color: white;
 }
 .theBigOne{
     width: 60%;
-    margin: 0 auto;
+    margin: 5% auto;
+    background-color: tan;
+    opacity: .5;
+    padding: 20px;
 }
 .ans{
-    width: 10%;
+    width: 9%;
+    text-align: center;
+    margin: 10px 0;
+    background-color: black;
+    border: white;
+    border-style: solid;
+    color: white;
     float: left;
-    color: blue;
+    padding: 10px 0;
 }
-.ansL{
-    width: 90%;
+.ansLo{
+    width: 89%;
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px 0;
+    background-color: black;
+    border: white;
+    border-style: solid;
+    color: white;
     float: left;
-    color: red;
 }
 .hidden{
     visibility: hidden;
+}
+row{
+    height: 500px;
 }

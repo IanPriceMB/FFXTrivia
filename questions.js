@@ -33,30 +33,30 @@ var Questions = [
     //easy questions
     [
         {
-        question: "EWho is the main character of Final Fantasy X?",
+        question: "What is Tidus' home city Called?",
         answers: [
-            {a : "Teedus", value : false},
-            {a : "Tyedus", value : false},
-            {a : "Tidus", value : true},
-            {a : "Tidos", value : false}
+            {a : "Zanarkand", value : 1},
+            {a : "Besaid", value : 0},
+            {a : "Baaj", value : 0},
+            {a : "Mt. Gagazet", value : 0}
         ]
         },
         {
-            question: "EWhat does the character Wakka use for a weapon?",
+            question: "The fiends called Cactuar's live where?",
             answers: [
-                {a : "A Sword", value : false},
-                {a : "A Blitzball", value : true},
-                {a : "A Doll", value : false},
-                {a : "A Trident", value : false}
+                {a : "The Mi'ihen Highroad & The Thunder Plains", value : 0},
+                {a : "Luca Stadium & Kilika Island", value : 0},
+                {a : "Mt. Gagazet & Bikanel Island", value : 0},
+                {a : "The Thunder Plains & Bikanel Island", value : 1}
             ]
         },
         {
-            question: "EThe character Yuna's class is a ______?",
+            question: "What is the name of Tidus' father's favorite Blitzball move?",
             answers: [
-                {a : "Black Mage", value : false},
-                {a : "Theif", value : false},
-                {a : "Summoner", value : true},
-                {a : "Monk", value : false}
+                {a : "The Jecht Shot", value : 0},
+                {a : "The Magnificent Jecht Shot", value : 0},
+                {a : "The Sublimely Magnificent Jecht Shot", value : 0},
+                {a : "The Sublimely Magnificent Jecht Shot MK III", value : 1}
             ]
         }
     ]
