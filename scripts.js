@@ -4,16 +4,21 @@ var difNames = ["Besaid", "Luca", "Djose", "Thunder Plains", "Mt. Gagazet"];
 var difLevel = ["very easy", "easy", "medium", "advanced", "expert"];
 var difficulty;
 var veryEasyCount;
+var vehide
 var easyCount;
+var ehide;
 var mediumCount;
+var mhide;
 var advancedCount;
+var ahide
 var expertCount;
-var i = 0;
-var j;
+var exhide;
+var j=0;
 var number = 20;
 
 //creating buttons for difficulty
-function difficulty(){
+function difficultylvl(){
+    $(".theBigOne").empty();
     for (var i = 0; i < difNames.length; i++){
        var difBtn = $("<div class='difBtn' >");
        difBtn.attr("id", "difBtn" + i);
@@ -21,39 +26,63 @@ function difficulty(){
        $("#difBtn" + i).append("<h2>" + difNames[i] + "</h2><p>" + difLevel[i] + "</p>");
        difBtn.attr("data-level", i);
     }
+//this will hide buttons if we get enough points in a particular catagory the sequential times around
+    if(veryEasyCount == Questions[vehide].length){
+        console.log(veryEasyCount);
+        $("#difBtn" + vehide).attr("class", "hidden");
+    }else if(difficulty == Questions[ehide].length){
+        $("#difBtn" + ehide).attr("class", "hidden");
+    }else if(difficulty == Questions[mhide].length){
+        $("#difBtn" + mhide).attr("class", "hidden");
+    }else if(difficulty == Questions[ahide].length){
+        $("#difBtn" + ahide).attr("class", "hidden");
+    }else if(difficulty == Questions[exhide].length){
+        $("#difBtn" + exhide).attr("class", "hidden");
+    }
 }
 
 //when click to start create difficulty screen
 $("body").on("click", ".origin", function(){
     $(".theBigOne").empty();
-    difficulty();
+    difficultylvl();
 })
 
-//chosing difficulty level
+//chosing difficulty level and prepping our appropriate count tracker variables
 $("body").on("click", ".difBtn", function(){
     difficulty = $(this).attr("data-level");
     gameStart();
     populate();
-    populate();
-    populate();
-    populate();
+    if(difficulty == 0){
+        veryEasyCount = 0;
+    }else if(difficulty == 1){
+        easyCount = 0;
+    }else if(difficulty == 2){
+        mediumCount = 0;
+    }else if(difficulty == 3){
+        advancedCount = 0;
+    }else if(difficulty == 4){
+        expertCount = 0;
+    }
 })
 
 //make the divs and such to hold all our questions
 function gameStart(){
     $(".theBigOne").empty();
     $(".theBigOne").append("<div class='question'>");
-    for (var i = 0; i < veryEasy.q0.answers.length; i++){
+    for (var i = 0; i < Questions[difficulty][j].answers.length; i++){
+        
         var newRow = $("<row>");
         newRow.attr("id", "row" + i);
         $(".theBigOne").append(newRow);
+        
         var ansDiv = $("<div>");
         var ansLDiv = $("<div>");
+        
         ansDiv.attr("id", "ans" + i);
         ansDiv.attr("class", "ans");
         ansLDiv.attr("id", "ansL" + i);
-        ansLDiv.attr("class", "ansL");
-        ansLDiv.attr("data-value", veryEasy.q0.answers[i].value)
+        ansLDiv.attr("class", "ansLo");
+        
         $("#row" + i).append(ansDiv);
         $("#row" + i).append(ansLDiv);
     }
@@ -61,59 +90,76 @@ function gameStart(){
 
 //add all the appropriate words to the right spots
 function populate(){
-    if (difficulty == 0){
-        j = 0;
+    $(".question").empty();
+    $(".ans").empty();
+    $(".ansLo").empty();
+;    $(".question").text(Questions[difficulty][j].question);
+    
+    for (var i = 0; i < Questions[difficulty][j].answers.length; i++){
+        $("#ansL" + i).text(Questions[difficulty][j].answers[i].a);
+        $("#ansL" + i).attr("data-value", Questions[difficulty][j].answers[i].value )
         $("#ans" + i).text(i + 1);
-        $(".question").text(veryEasy.q0.question);
-        $("#ansL" + i).text(veryEasy.q0.answers[i].a);
-        i++; 
-    }
-     else if (difficulty = 1){
-        j = 0;
-        $("#ans" + i).text(i + 1);
-        $(".question").text(easy.q0.question);
-        $("#ansL" + i).text(easy.q0.answers[i].a);
-        i++; 
-    } else if (difficulty = 2){
-        j = 0;
-        $("#ans" + i).text(i + 1);
-        $(".question").text(medium.q0.question);
-        $("#ansL" + i).text(medium.q0.answers[i].a);
-        i++; 
-    } else if (difficulty = 3){
-        j = 0;
-        $("#ans" + i).text(i + 1);
-        $(".question").text(advanced.q0.question);
-        $("#ansL" + i).text(advanced.q0.answers[i].a);
-        i++; 
-    } else if (difficulty = 4){
-        j = 0;
-        $("#ans" + i).text(i + 1);
-        $(".question").text(expert.q0.question);
-        $("#ansL" + i).text(expert.q0.answers[i].a);
-        i++; 
     }
 }
 
-// check if true
-$("body").on("click", ".ansL", function(){
-    console.log(this);
-    if($(this).attr("data-value") === true){
-        //whichever count ++;
+// check if true and update our variables appropriately. also checks if we need to go back to difficulty screen and if a difficulty needs to be taken away.
+$("body").on("click", ".ansLo", function(){
+    if(($(this).attr("data-value")) == 1){
         j++;
-        i=0;
-        populate();
-        populate();
-        populate();
-        populate();
-    } else{
+        if(difficulty == 0){
+            veryEasyCount ++;
+            if(veryEasyCount == Questions[difficulty].length){
+                vehide = difficulty;
+            }
+        }else if(difficulty == 1){
+            easyCount++;
+            if(easyCount == Questions[difficulty].length){
+                ehide = difficulty;
+            }
+        }else if(difficulty == 2){
+            mediumCount++;
+            if(mediumCount == Questions[difficulty].length){
+                mhide = difficulty;
+            }
+        }else if(difficulty == 3){
+            advancedCount++;
+            if(advancedCount == Questions[difficulty].length){
+                ahide = difficulty;
+            }
+        }else if(difficulty == 4){
+            expertCount++;
+            if(expertCount == Questions[difficulty].length){
+                exhide = difficulty;
+            }
+        }
+        if(j == Questions[difficulty].length){
+            difficultylvl();
+            console.log(veryEasyCount);
+        } else {
+            populate();
+            console.log(veryEasyCount);
+        }
+    } else if (($(this).attr("data-value")) == 0){
         j++;
-        i=0;
-        populate();
-        populate();
-        populate();
-        populate();
-    }
+        console.log(j);
+        if(j == Questions[difficulty].length){
+            if(difficulty == 0){
+                veryEasyCount = 0;
+            }else if(difficulty = 1){
+                easyCount = 0;
+            }else if(difficulty == 2){
+                mediumCount = 0;
+            }else if(difficulty == 3){
+                advancedCount = 0;
+            }else if(difficulty == 4){
+                expertCount = 0;
+            }
+            difficultylvl();
+            console.log(veryEasyCount);
+        } else {
+            populate();
+            console.log(veryEasyCount);
+        }    
+    }     
 })
-
 });
