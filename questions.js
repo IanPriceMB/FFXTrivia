@@ -1,8 +1,8 @@
 
 // var Questions = [
 //very easy questions
- var veryEasy = [
-    {
+ var veryEasy = {
+    q0: {
     question: "Who is the main character of Final Fantasy X?",
     answers: [
         {a : "Teedus", value : false},
@@ -11,7 +11,7 @@
         {a : "Tidos", value : false},
     ]
     },
-    {
+    q2: {
         question: "What does the character Wakka use for a weapon?",
         answers: [
             {a : "A Sword", value : false},
@@ -20,7 +20,7 @@
             {a : "A Trident", value : false},
         ]
     },
-    {
+    q3: {
         question: "The character Yuna's class is a ______?",
         answers: [
             {a : "Black Mage", value : false},
@@ -29,7 +29,7 @@
             {a : "Monk", value : false},
         ]
     }
-];
+ };
 //easy questions
 var easy =  [
     {

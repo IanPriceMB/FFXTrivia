@@ -3,3 +3,17 @@
     text-align: center;
     margin: 10px auto;
 }
+.theBigOne{
+    width: 60%;
+    margin: 0 auto;
+}
+.ans{
+    width: 10%;
+    float: left;
+    color: blue;
+}
+.ansL{
+    width: 90%;
+    float: left;
+    color: red;
+}
