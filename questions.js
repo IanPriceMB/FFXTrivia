@@ -33,12 +33,42 @@ var Questions = [
     //easy questions
     [
         {
-        question: "What is Tidus' home city Called?",
+        question: "What is Tidus' home city called?",
         answers: [
             {a : "Zanarkand", value : 1},
             {a : "Besaid", value : 0},
             {a : "Baaj", value : 0},
             {a : "Mt. Gagazet", value : 0}
+        ]
+        },
+        {
+            question: "What race is the character Kimahri?",
+            answers: [
+                {a : "Human", value : 0},
+                {a : "Guado", value : 0},
+                {a : "Ronso", value : 1},
+                {a : "Fiend", value : 0}
+            ]
+        },
+        {
+            question: "What is the name of Tidus' father's favorite Blitzball move?",
+            answers: [
+                {a : "The Jecht Shot", value : 0},
+                {a : "The Magnificent Jecht Shot", value : 0},
+                {a : "The Sublimely Magnificent Jecht Shot", value : 0},
+                {a : "The Sublimely Magnificent Jecht Shot MK III", value : 1}
+            ]
+        }
+    ],
+// medium questions
+    [
+        {
+        question: "How many 'capture-able' fiend speicies are there in the Calm Lands?",
+        answers: [
+            {a : "9", value : 1},
+            {a : "10", value : 0},
+            {a : "7", value : 0},
+            {a : "8", value : 0}
         ]
         },
         {
@@ -51,12 +81,72 @@ var Questions = [
             ]
         },
         {
-            question: "What is the name of Tidus' father's favorite Blitzball move?",
+            question: "Yuna's father was also a famous summoner, what was his name?",
             answers: [
-                {a : "The Jecht Shot", value : 0},
-                {a : "The Magnificent Jecht Shot", value : 0},
-                {a : "The Sublimely Magnificent Jecht Shot", value : 0},
-                {a : "The Sublimely Magnificent Jecht Shot MK III", value : 1}
+                {a : "Auron", value : 0},
+                {a : "Jecht", value : 0},
+                {a : "Braska", value : 1},
+                {a : "Kimahri", value : 0}
+            ]
+        }
+    ],
+//advanced questions
+    [
+        {
+        question: "What are Tidus's 'Key Techniques'?",
+        answers: [
+            {a : "Sphere Shot, Anti-Drain 3, Golden Arm", value : 0},
+            {a : "Venom Tackle, Drain Tackle, Anti-Venom 2", value : 1},
+            {a : "Volly Shot, Nap Shot, Jecht Shot", value : 0},
+            {a : "Brawler, Venom Shot 3, Wither Tackle 2", value : 0}
+        ]
+        },
+        {
+            question: "What airship password will get you Riku's ultimate weapon?",
+            answers: [
+                {a : "MURSAME", value : 0},
+                {a : "GOD HAND", value : 1},
+                {a : "CALADBOLG", value : 0},
+                {a : "NIRVANA", value : 0}
+            ]
+        },
+        {
+            question: "There was a famous summoner from the island of Kilika, what was their name?",
+            answers: [
+                {a : "Ohalland", value : 1},
+                {a : "Yunaleska", value : 0},
+                {a : "Braska", value : 0},
+                {a : "Zuke", value : 0}
+            ]
+        }
+    ],
+//expert questions
+    [
+        {
+        question: "What is Noy Guado's player salary",
+        answers: [
+            {a : "500 gil per game", value : 0},
+            {a : "80 gil per game", value : 1},
+            {a : "320 gil per game", value : 0},
+            {a : "380 gil per game", value : 0}
+        ]
+        },
+        {
+            question: "What is the 13th word Riku ever says, and what does it mean?",
+            answers: [
+                {a : "feyd, wait", value : 0},
+                {a : "cunno, sorry", value : 0},
+                {a : "fedr, with", value : 1},
+                {a : "Oui, you", value : 0}
+            ]
+        },
+        {
+            question: "Is it possible to stop Seymour Guado's body guards from using items? If so, how?",
+            answers: [
+                {a : "No, they will always use items.", value : 0},
+                {a : "Yes, they run of items out eventually.", value : 0},
+                {a : "Yes, by using a pheonix down on them.", value : 0},
+                {a : "Yes, by using the steal ability on them.", value : 1}
             ]
         }
     ]

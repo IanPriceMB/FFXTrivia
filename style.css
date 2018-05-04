@@ -36,6 +36,11 @@ h1, p , button{
     opacity: .5;
     padding: 20px;
 }
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 .ans{
     width: 9%;
     text-align: center;

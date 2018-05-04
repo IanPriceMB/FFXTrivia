@@ -54,7 +54,6 @@ $("body").on("click", ".origin", function(){
     $(".theBigOne").empty();
     difficultylvl();
 })
-
 //chosing difficulty level and prepping our appropriate count tracker variables
 $("body").on("click", ".difBtn", function(){
     difficulty = $(this).attr("data-level");
@@ -77,13 +76,12 @@ $("body").on("click", ".difBtn", function(){
         expertCount = 0;
     }
 })
-
 //make the divs and such to hold all our questions
 function gameStart(){
     $(".theBigOne").empty();
     $(".theBigOne").append("<div class='question'>");
     for (var i = 0; i < Questions[difficulty][j].answers.length; i++){
-        
+    
         var newRow = $("<row>");
         newRow.attr("id", "row" + i);
         $(".theBigOne").append(newRow);
@@ -100,13 +98,12 @@ function gameStart(){
         $("#row" + i).append(ansLDiv);
     }
 }
-
 //add all the appropriate words to the right spots
 function populate(){
     $(".question").empty();
     $(".ans").empty();
     $(".ansLo").empty();
-;    $(".question").text(Questions[difficulty][j].question);
+    $(".question").text(Questions[difficulty][j].question);
     
     for (var i = 0; i < Questions[difficulty][j].answers.length; i++){
         $("#ansL" + i).text(Questions[difficulty][j].answers[i].a);
@@ -114,7 +111,6 @@ function populate(){
         $("#ans" + i).text(i + 1);
     }
 }
-
 // check if true and update our variables appropriately. also checks if we need to go back to difficulty screen and if a difficulty needs to be taken away.
 $("body").on("click", ".ansLo", function(){
     if(($(this).attr("data-value")) == 1){
@@ -147,14 +143,11 @@ $("body").on("click", ".ansLo", function(){
         }
         if(j == Questions[difficulty].length){
             difficultylvl();
-            console.log(veryEasyCount);
         } else {
             populate();
-            console.log(veryEasyCount);
         }
     } else if (($(this).attr("data-value")) == 0){
         j++;
-        console.log(j);
         if(j == Questions[difficulty].length){
             if(difficulty == 0){
                 veryEasyCount = 0;
@@ -168,10 +161,8 @@ $("body").on("click", ".ansLo", function(){
                 expertCount = 0;
             }
             difficultylvl();
-            console.log(veryEasyCount);
         } else {
             populate();
-            console.log(veryEasyCount);
         }    
     }     
 })
