@@ -1,17 +1,19 @@
 body{
-    widows: 100%;
+    width: 100%;
 }
 h1, p , button{
     text-align: center;
 }
 .origin{
-    border-radius: 8px;
-    background-color: blue;
-    color:white;
-    margin: 10px 40%;
-    width: 20%;
+    width: 90%;
+    text-align: center;
+    margin: 10px 5%;
+    background-color: black;
+    border: white;
+    border-style: solid;
+    color: white;
 }
-.difBtn, .question{
+.difBtn, .question, .bossBtn{
     width: 90%;
     text-align: center;
     margin: 10px auto;
@@ -23,11 +25,24 @@ h1, p , button{
 .question{
     width: 90%;
     text-align: center;
+    padding: 10px 0;
     margin: 10px auto;
     background-color: black;
     border: white;
     border-style: solid;
     color: white;
+    font-size: 30px;
+}
+row{
+    float: left;
+    width: 90%;
+    text-align: center;
+    margin: 10px 5%;
+    background-color: black;
+    border: white;
+    border-style: solid;
+    color: white;
+    font-size: 30px;
 }
 .theBigOne{
     width: 60%;
@@ -42,7 +57,7 @@ h1, p , button{
     display: table;
 }
 .ans{
-    width: 9%;
+    width: 8.8%;
     text-align: center;
     margin: 10px 0;
     background-color: black;
@@ -53,7 +68,7 @@ h1, p , button{
     padding: 10px 0;
 }
 .ansLo{
-    width: 89%;
+    width: 90%;
     text-align: center;
     margin: 10px 0;
     padding: 10px 0;
@@ -61,11 +76,9 @@ h1, p , button{
     border: white;
     border-style: solid;
     color: white;
-    float: left;
+    float: right;
 }
+
 .hidden{
     visibility: hidden;
-}
-row{
-    height: 500px;
 }

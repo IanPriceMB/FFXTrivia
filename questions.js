@@ -58,6 +58,15 @@ var Questions = [
                 {a : "The Sublimely Magnificent Jecht Shot", value : 0},
                 {a : "The Sublimely Magnificent Jecht Shot MK III", value : 1}
             ]
+        },
+        {
+            question: "Yuna's father was also a famous summoner, what was his name?",
+            answers: [
+                {a : "Auron", value : 0},
+                {a : "Jecht", value : 0},
+                {a : "Braska", value : 1},
+                {a : "Kimahri", value : 0}
+            ]
         }
     ],
 // medium questions
@@ -81,12 +90,12 @@ var Questions = [
             ]
         },
         {
-            question: "Yuna's father was also a famous summoner, what was his name?",
+            question: "Who are the reigning Blitzball League champions when you first arrive in Luca?",
             answers: [
-                {a : "Auron", value : 0},
-                {a : "Jecht", value : 0},
-                {a : "Braska", value : 1},
-                {a : "Kimahri", value : 0}
+                {a : "Ronso Fangs", value : 0},
+                {a : "Zanarkand Abes", value : 0},
+                {a : "Luca Goers", value : 1},
+                {a : "Al Bhed Psyches", value : 0}
             ]
         }
     ],
@@ -105,7 +114,7 @@ var Questions = [
             question: "What airship password will get you Riku's ultimate weapon?",
             answers: [
                 {a : "MURSAME", value : 0},
-                {a : "GOD HAND", value : 1},
+                {a : "GODHAND", value : 1},
                 {a : "CALADBOLG", value : 0},
                 {a : "NIRVANA", value : 0}
             ]
@@ -123,12 +132,42 @@ var Questions = [
 //expert questions
     [
         {
-        question: "What is Noy Guado's player salary",
+        question: "What is Noy Guado's player salary?",
         answers: [
             {a : "500 gil per game", value : 0},
             {a : "80 gil per game", value : 1},
             {a : "320 gil per game", value : 0},
             {a : "380 gil per game", value : 0}
+        ]
+        },
+        {
+            question: "Which blitzball character has the most SH in the League at level 99?",
+            answers: [
+                {a : "Tidus", value : 0},
+                {a : "Eiggar", value : 0},
+                {a : "Keepa", value : 1},
+                {a : "Abus", value : 0}
+            ]
+        },
+        {
+            question: "Is it possible to stop Seymour Guado's body guards from using items? If so, how?",
+            answers: [
+                {a : "No, they will always use items.", value : 0},
+                {a : "Yes, they run of items out eventually.", value : 0},
+                {a : "Yes, by using a pheonix down on them.", value : 0},
+                {a : "Yes, by using the 'steal' ability on them.", value : 1}
+            ]
+        }
+    ],
+//boss questions
+    [
+        {
+        question: "How many 'Original' fiends become available at the monster arena via the fiend catching sidequest?",
+        answers: [
+            {a : "5", value : 0},
+            {a : "4", value : 1},
+            {a : "8", value : 0},
+            {a : "2", value : 0}
         ]
         },
         {
@@ -141,12 +180,21 @@ var Questions = [
             ]
         },
         {
-            question: "Is it possible to stop Seymour Guado's body guards from using items? If so, how?",
+            question: "How many fiends in Spira have names that start with the letter 'G'?",
             answers: [
-                {a : "No, they will always use items.", value : 0},
-                {a : "Yes, they run of items out eventually.", value : 0},
-                {a : "Yes, by using a pheonix down on them.", value : 0},
-                {a : "Yes, by using the steal ability on them.", value : 1}
+                {a : "10", value : 0},
+                {a : "12", value : 0},
+                {a : "9", value : 0},
+                {a : "11", value : 1}
+            ]
+        },
+        {
+            question: "Frelr uv dra vummufehk ec hud y faybuh vun Neggi?",
+            answers: [
+                {a : "Taic Aq Sylrehy", value : 0},
+                {a : "Dobruuh Lmyf", value : 0},
+                {a : "Suukma", value : 1},
+                {a : "Kutryht", value : 0}
             ]
         }
     ]
