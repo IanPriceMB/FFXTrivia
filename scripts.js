@@ -149,6 +149,7 @@ $("body").on("click", ".bossBtn", function(){
 $("body").on("click", ".ansLo", function(){
     if(($(this).attr("data-value")) == 1){
         console.log(j);
+        console.log(bossCount);
         j++;
         if(difficulty == 0){
             veryEasyCount ++;
@@ -177,14 +178,6 @@ $("body").on("click", ".ansLo", function(){
             }
         }else if(difficulty == 5){
             bossCount++;
-            if (j == Questions[difficulty].length){
-                    $(".theBigOne").empty();
-                    var youWin = $("<div class='win'>")
-                    $(".theBigOne").append(youWin);
-                    $(".win").text('YOU WIN!');
-            }else{
-                populate()
-            }
         }
         if(j == Questions[difficulty].length && easyCount == easyQ && veryEasyCount == veryeasyQ && mediumCount == mediumQ && advancedCount == advancedQ && expertCount == expertQ){
             boss();
@@ -193,11 +186,15 @@ $("body").on("click", ".ansLo", function(){
             mediumCount = 0;
             advancedCount = 0;
             expertCount = 0;
+        }else if(j == Questions[difficulty].length && difficulty == 5){
+            $(".theBigOne").empty();
+                    var youWin = $("<div class='win'>")
+                    $(".theBigOne").append(youWin);
+                    $(".win").text('YOU WIN!');
         }
-       else if (j == Questions[difficulty].length){
+        else if (j == Questions[difficulty].length){
             difficultylvl();
-       }
-        else {
+       }else {
             populate();
         }
     } else if (($(this).attr("data-value")) == 0){
