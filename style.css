@@ -1,6 +1,7 @@
 body{
     width: 100%;
     background-color: rgb(23, 23, 100);
+    overflow: auto;
 }
 h1, h2, p , button{
     text-align: center;
