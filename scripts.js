@@ -113,8 +113,8 @@ function populate(){
     $(".question").empty();
     $(".ans").empty();
     $(".ansLo").empty();
-    $(".tiemr").empty()
-;    $(".question").text(Questions[difficulty][j].question);
+    $(".timer").empty();
+    $(".question").text(Questions[difficulty][j].question);
     run();
 
     for (var i = 0; i < Questions[difficulty][j].answers.length; i++){
@@ -134,7 +134,7 @@ function boss(){
 $("body").on("click", ".bossBtn", function(){
     $(".theBigOne").empty();
     $(".pic").attr("src", 'sin.png');
-    $("#audioContainer").attr("src", sinMusic.mp3)
+    $("#musicChoice").attr("src", 'sinMusic.mp3')
     difficulty = 5;
     j = 0;
     $(".theBigOne").append("<div class='question'>");
@@ -240,7 +240,7 @@ $("body").on("click", ".ansLo", function(){
             var youWin = $("<div class='win'>")
             $(".theBigOne").append(youWin);
             $(".win").text('YOU WIN!');
-            $("#audioContainer").attr("src", winMusic.mp3)
+            $("#musicChoice").attr("src", 'winMusic.mp3')
         }
         else if (j == Questions[difficulty].length){
             difficultylvl();
@@ -265,7 +265,7 @@ $("body").on("click", ".ansLo", function(){
             var youLose = $("<div class='lose'>")
             $(".theBigOne").append(youLose);
             $(".lose").text('YOU LOSE!');
-            $("#audioContainer").attr("src", loseMusic.mp3)
+            $("#musicChoice").attr("src", 'loseMusic.mp3')
         }else if (j == Questions[difficulty].length){
                 difficultylvl();
         } else {
