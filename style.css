@@ -4,6 +4,19 @@ body{
 h1, h2, p , button{
     text-align: center;
 }
+h1{
+    font-size: 50px;
+}
+h2{
+    font-size: 40px;
+}
+h3{
+    font-size: 30px;
+    opacity: .7;
+}
+p{
+    font-size: 20px;
+}
 .origin{
     width: 90%;
     text-align: center;
@@ -58,10 +71,12 @@ row{
 }
 .theBigOne{
     width: 60%;
-    margin: 5% auto;
     background-color: tan;
     opacity: .5;
     padding: 20px;
+    position: fixed;
+    left: 20%;
+    top: 10%;
 }
 .clearfix::after {
     content: "";
@@ -69,11 +84,12 @@ row{
     display: table;
 }
 .ans{
-    width: 8.8%;
+    width: 10%;
     text-align: center;
     margin: 10px 0;
     background-color: black;
-    border: white;
+    border-top: white;
+    border-bottom: white;
     border-style: solid;
     color: white;
     float: left;
@@ -85,7 +101,8 @@ row{
     margin: 10px 0;
     padding: 10px 0;
     background-color: black;
-    border: white;
+    border-top: white;
+    border-bottom: white;
     border-style: solid;
     color: white;
     float: right;
@@ -102,4 +119,10 @@ row{
 }
 .hidden{
     visibility: hidden;
+}
+img{
+    display: block;
+    width: 100%;
+    float: left;
+    height: 100%;
 }

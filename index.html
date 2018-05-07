@@ -2,17 +2,24 @@
 <html lang="en-us">
     <head>
             <meta charset="UTF-8">
+            <link rel="stylesheet" type="text/css" href="reset.css">
             <link rel="stylesheet" type="text/css" href="style.css" />
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script type="text/javascript" src="questions.js"></script>
             <script type="text/javascript" src="scripts.js"></script>
             <title>FFX Trivia Game</title>
     </head>
-    <body background="back.jpg" style="width: 100%; display: block;">
-        <div class="theBigOne clearfix">
+    <body>
+        <img class="pic" src="back.jpg" alt="background">
+        <div class="theBigOne">
             <h1>Final Fantasy X Trivia</h1>
             <p>Created by Ian Price</p>
             <button class="origin"><h2>Click Me to Start!</h2></button>
+        </div>
+        <div id="audioContainer">
+            <audio loop="loop" autoplay="autoplay">  
+            <source src= "music.mp3"/>  
+        </audio>
         </div>
     </body> 
 </html>
