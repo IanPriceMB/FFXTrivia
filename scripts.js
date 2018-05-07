@@ -16,18 +16,19 @@ var advancedCount;
 var ahide = 0;
 var expertCount;
 var exhide = 0;
-var bossCount = 0;
 //j is used to get into the unnamed arry so that we can access the appropriate objects
 var j=0;
 //number is for the timer functions
-var number = 20;
+var number = 5;
 //this is for shot handing the boss later as well as allowing for future questions
 var veryeasyQ = Questions[0].length;
 var easyQ = Questions[1].length;
 var mediumQ = Questions[2].length;
 var advancedQ = Questions[3].length;
 var expertQ = Questions[4].length;
-
+//timers
+var number = 30;
+var intervalId;
 //creating buttons for difficulty and filling them in
 function difficultylvl(){
     $(".theBigOne").empty();
@@ -87,6 +88,8 @@ $("body").on("click", ".difBtn", function(){
 function gameStart(){
     $(".theBigOne").empty();
     $(".theBigOne").append("<div class='question'>");
+    $("body").append("<div class='timer'>");
+    
     for (var i = 0; i < Questions[difficulty][j].answers.length; i++){
         var newRow = $("<row>");
         newRow.attr("id", "row" + i);
@@ -108,7 +111,8 @@ function populate(){
     $(".ans").empty();
     $(".ansLo").empty();
     $(".question").text(Questions[difficulty][j].question);
-    
+    run();
+
     for (var i = 0; i < Questions[difficulty][j].answers.length; i++){
         $("#ansL" + i).text(Questions[difficulty][j].answers[i].a);
         $("#ansL" + i).attr("data-value", Questions[difficulty][j].answers[i].value )
@@ -120,7 +124,8 @@ function boss(){
     $(".theBigOne").empty();
     var bossBtn = $("<div class='bossBtn'>");
     $(".theBigOne").append(bossBtn);
-    $(".bossBtn").text("<p>'Sin has been sighted'</p><br><p>'Prepare to engage!'</p>")
+    $(".bossBtn").text("Sin has been sighted!");
+    $(".bossBtn").text("Prepare to engage!")
 }
 //unlease the boss
 $("body").on("click", ".bossBtn", function(){
@@ -144,12 +149,48 @@ $("body").on("click", ".bossBtn", function(){
     }
     populate();
 })
+//this section sets up the timers 
+function run() {
+    number = 5;
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000);
+}
+function decrement() {
+    number--;
+    $(".timer").html("<h2>Timer: " + number + "</h2>");
+    if (number == 0) {
+        stop();
+        j++;
+        console.log(j);
+        console.log(veryEasyCount);
+        console.log(Questions[difficulty].length);
+        if(difficulty == 0){
+            veryEasyCount = 0;
+            console.log(veryEasyCount);
+        }else if(difficulty == 1){
+            easyCount = 0;
+        }else if(difficulty == 2){
+            mediumCount = 0;
+        }else if(difficulty == 3){
+            advancedCount = 0;
+        }else if(difficulty == 4){
+            expertCount = 0;
+        }
+        if (j == Questions[difficulty].length){
+            difficultylvl();
+        }else {
+            populate();
+        }
+    }
+} 
+function stop() {
+  clearInterval(intervalId);
+}
 //check if true and update our variables appropriately. also checks if we need to go back to difficulty screen and if a difficulty needs to be taken away.
 //also win conditions and boss monster
 $("body").on("click", ".ansLo", function(){
+    stop();
     if(($(this).attr("data-value")) == 1){
-        console.log(j);
-        console.log(bossCount);
         j++;
         if(difficulty == 0){
             veryEasyCount ++;
@@ -176,8 +217,6 @@ $("body").on("click", ".ansLo", function(){
             if(expertCount >= Questions[difficulty].length){
                 exhide = difficulty;
             }
-        }else if(difficulty == 5){
-            bossCount++;
         }
         if(j == Questions[difficulty].length && easyCount == easyQ && veryEasyCount == veryeasyQ && mediumCount == mediumQ && advancedCount == advancedQ && expertCount == expertQ){
             boss();
@@ -188,9 +227,9 @@ $("body").on("click", ".ansLo", function(){
             expertCount = 0;
         }else if(j == Questions[difficulty].length && difficulty == 5){
             $(".theBigOne").empty();
-                    var youWin = $("<div class='win'>")
-                    $(".theBigOne").append(youWin);
-                    $(".win").text('YOU WIN!');
+            var youWin = $("<div class='win'>")
+            $(".theBigOne").append(youWin);
+            $(".win").text('YOU WIN!');
         }
         else if (j == Questions[difficulty].length){
             difficultylvl();
@@ -209,14 +248,12 @@ $("body").on("click", ".ansLo", function(){
             advancedCount = 0;
         }else if(difficulty == 4){
             expertCount = 0;
-        }else if(difficulty == 5){
-            bossCount = 0;
         }
         if(j == Questions[difficulty].length && difficulty == 5){      
             $(".theBigOne").empty();
             var youLose = $("<div class='lose'>")
             $(".theBigOne").append(youLose);
-            $(".win").text('YOU LOSE!');
+            $(".lose").text('YOU LOSE!');
         }else if (j == Questions[difficulty].length){
                 difficultylvl();
         } else {

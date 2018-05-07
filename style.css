@@ -1,7 +1,7 @@
 body{
     width: 100%;
 }
-h1, p , button{
+h1, h2, p , button{
     text-align: center;
 }
 .origin{
@@ -21,6 +21,18 @@ h1, p , button{
     border: white;
     border-style: solid;
     color: white;
+}
+.timer{
+    border: black;
+    border-style: solid;
+    color: black;
+    background-color: tan;
+    width: 15%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    opacity: .5;
 }
 .question{
     width: 90%;
@@ -78,7 +90,16 @@ row{
     color: white;
     float: right;
 }
-
+.win, .lose, .bossBtn{
+    background-color: black;
+    border: white;
+    border-style: solid;
+    color: white;
+    font-size: 30px;
+    padding: 20px;
+    text-align: center;
+    font-size: 50px;
+}
 .hidden{
     visibility: hidden;
 }
