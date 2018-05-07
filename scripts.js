@@ -33,6 +33,7 @@ var intervalId;
 //creating buttons for difficulty and filling them in
 function difficultylvl(){
     $(".theBigOne").empty();
+    $(".timer").empty();
     for (var i = 0; i < difNames.length; i++){
        var difBtn = $("<div class='difBtn' >");
        difBtn.attr("id", "difBtn" + i);
@@ -60,6 +61,7 @@ function difficultylvl(){
 //when click start create difficulty buttons
 $("body").on("click", ".origin", function(){
     $(".theBigOne").empty();
+    document.getElementById('play').play();
     difficultylvl();
 })
 //chosing difficulty level and prepping our appropriate count tracker variables
@@ -133,8 +135,7 @@ function boss(){
 //unlease the boss
 $("body").on("click", ".bossBtn", function(){
     $(".theBigOne").empty();
-    $(".pic").attr("src", 'sin.png');
-    $("#musicChoice").attr("src", 'sinMusic.mp3')
+    $(".pic").attr("src", 'images/sin.png');
     difficulty = 5;
     j = 0;
     $(".theBigOne").append("<div class='question'>");
@@ -182,7 +183,6 @@ function decrement() {
             var youLose = $("<div class='lose'>")
             $(".theBigOne").append(youLose);
             $(".lose").text('YOU LOSE!');
-            $("#audioContainer").attr("src", loseMusic.mp3)
         }else if (j == Questions[difficulty].length){
             difficultylvl();
         }else {
@@ -226,7 +226,6 @@ $("body").on("click", ".ansLo", function(){
             }
         }else if(difficulty == 5){
             bossCount++;
-            console.log(bossCount);
         }
         if(j == Questions[difficulty].length && easyCount == easyQ && veryEasyCount == veryeasyQ && mediumCount == mediumQ && advancedCount == advancedQ && expertCount == expertQ){
             boss();
@@ -240,7 +239,6 @@ $("body").on("click", ".ansLo", function(){
             var youWin = $("<div class='win'>")
             $(".theBigOne").append(youWin);
             $(".win").text('YOU WIN!');
-            $("#musicChoice").attr("src", 'winMusic.mp3')
         }
         else if (j == Questions[difficulty].length){
             difficultylvl();
@@ -265,7 +263,6 @@ $("body").on("click", ".ansLo", function(){
             var youLose = $("<div class='lose'>")
             $(".theBigOne").append(youLose);
             $(".lose").text('YOU LOSE!');
-            $("#musicChoice").attr("src", 'loseMusic.mp3')
         }else if (j == Questions[difficulty].length){
                 difficultylvl();
         } else {
