@@ -171,7 +171,7 @@ var Questions = [
         ]
         },
         {
-            question: "What is the 13th word Riku ever says, and what does it mean?",
+            question: "What is the 13th word Rikku ever says, and what does it mean?",
             answers: [
                 {a : "feyd, wait", value : 0},
                 {a : "cunno, sorry", value : 0},

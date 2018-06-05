@@ -3,6 +3,12 @@ body{
     background-color: rgb(23, 23, 100);
     overflow: auto;
 }
+.wrong{
+    color: red !important;
+}
+.right{
+    color: green !important;
+}
 h1, h2, p , button{
     text-align: center;
 }
@@ -127,6 +133,7 @@ img{
     float: left;
     height: 100%;
 }
+
 @media only screen and (max-width: 600px) {
     img {
         visibility: hidden;   
@@ -163,11 +170,23 @@ img{
         left: 0;
         width: 100%;
         margin-bottom: 500px;
+        float: left;
+        height: 100%;
+        overflow: auto;
+        margin-bottom: 100px;
     }
     .timer{
         width: 100%;
     }
     body{
         background-color: rgb(65, 65, 172);
+        height: 100%;
+        overflow: auto;
+    }
+    .wrong{
+        color: red;
+    }
+    .right{
+        color: green;
     }
 }

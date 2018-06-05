@@ -105,7 +105,7 @@ function gameStart(){
         ansDiv.attr("id", "ans" + i);
         ansDiv.attr("class", "ans");
         ansLDiv.attr("id", "ansL" + i);
-        ansLDiv.attr("class", "ansLo");  
+        ansLDiv.attr("class", "ansLo"); 
         $("#row" + i).append(ansDiv);
         $("#row" + i).append(ansLDiv);
     }
@@ -121,8 +121,10 @@ function populate(){
 
     for (var i = 0; i < Questions[difficulty][j].answers.length; i++){
         $("#ansL" + i).text(Questions[difficulty][j].answers[i].a);
-        $("#ansL" + i).attr("data-value", Questions[difficulty][j].answers[i].value )
+        $("#ansL" + i).attr("data-value", Questions[difficulty][j].answers[i].value)
         $("#ans" + i).text(i + 1);
+        $("#ans" +i).addClass("answer" + Questions[difficulty][j].answers[i].value);
+        $("#ansL" +i).addClass("answerL" + Questions[difficulty][j].answers[i].value);
     }
 }
 //create a button to unleash the boss
@@ -146,7 +148,7 @@ $("body").on("click", ".bossBtn", function(){
         $(".theBigOne").append(newRow);
         var ansDiv = $("<div>");
         var ansLDiv = $("<div>");
-        ansDiv.attr("id", "ans" + i);
+        ansDiv.attr("id", "ans" +i);
         ansDiv.attr("class", "ans");
         ansLDiv.attr("id", "ansL" + i);
         ansLDiv.attr("class", "ansLo");  
@@ -228,6 +230,14 @@ $("body").on("click", ".ansLo", function(){
             bossCount++;
         }
         if(j == Questions[difficulty].length && easyCount == easyQ && veryEasyCount == veryeasyQ && mediumCount == mediumQ && advancedCount == advancedQ && expertCount == expertQ){
+            $('.answer1').removeClass("right")
+            $('.answer0').removeClass("wrong")
+            $('.answerL1').removeClass("right")
+            $('.answerL0').removeClass("wrong")
+            for (var i = 0; i < Questions[difficulty][j-1].answers.length; i++){
+                $("#ans" +i).removeClass("answer" + Questions[difficulty][j-1].answers[i].value);
+                $("#ansL" +i).removeClass("answerL" + Questions[difficulty][j-1].answers[i].value);
+            }  
             boss();
             veryEasyCount = 0;
             easyCount = 0;
@@ -241,12 +251,33 @@ $("body").on("click", ".ansLo", function(){
             $(".win").text('YOU WIN!');
         }
         else if (j == Questions[difficulty].length){
+            $('.answer1').removeClass("right")
+            $('.answer0').removeClass("wrong")
+            $('.answerL1').removeClass("right")
+            $('.answerL0').removeClass("wrong")
+            for (var i = 0; i < Questions[difficulty][j-1].answers.length; i++){
+                $("#ans" +i).removeClass("answer" + Questions[difficulty][j-1].answers[i].value);
+                $("#ansL" +i).removeClass("answerL" + Questions[difficulty][j-1].answers[i].value);
+            }  
             difficultylvl();
        }else {
-            populate();
+        $('.answer1').removeClass("right")
+            $('.answer0').removeClass("wrong")
+            $('.answerL1').removeClass("right")
+            $('.answerL0').removeClass("wrong")
+            for (var i = 0; i < Questions[difficulty][j-1].answers.length; i++){
+                $("#ans" +i).removeClass("answer" + Questions[difficulty][j-1].answers[i].value);
+                $("#ansL" +i).removeClass("answerL" + Questions[difficulty][j-1].answers[i].value);
+            }      
+        populate();
         }
     } else if (($(this).attr("data-value")) == 0){
+        $('.answer1').addClass("right")
+        $('.answer0').addClass("wrong")
+        $('.answerL1').addClass("right")
+        $('.answerL0').addClass("wrong")
         j++;
+        setTimeout(function(){
         if(difficulty == 0){
             veryEasyCount = 0;
         }else if(difficulty == 1){
@@ -258,16 +289,33 @@ $("body").on("click", ".ansLo", function(){
         }else if(difficulty == 4){
             expertCount = 0;
         }
-        if(j == Questions[difficulty].length && difficulty == 5){      
+        if(j == Questions[difficulty].length && difficulty == 5){  
             $(".theBigOne").empty();
             var youLose = $("<div class='lose'>")
             $(".theBigOne").append(youLose);
             $(".lose").text('YOU LOSE!');
         }else if (j == Questions[difficulty].length){
-                difficultylvl();
+            $('.answer1').removeClass("right")
+            $('.answer0').removeClass("wrong")
+            $('.answerL1').removeClass("right")
+            $('.answerL0').removeClass("wrong")
+            for (var i = 0; i < Questions[difficulty][j-1].answers.length; i++){
+                $("#ans" +i).removeClass("answer" + Questions[difficulty][j-1].answers[i].value);
+                $("#ansL" +i).removeClass("answerL" + Questions[difficulty][j-1].answers[i].value);
+            }   
+            difficultylvl();
         } else {
+            $('.answer1').removeClass("right")
+            $('.answer0').removeClass("wrong")
+            $('.answerL1').removeClass("right")
+            $('.answerL0').removeClass("wrong")
+            for (var i = 0; i < Questions[difficulty][j-1].answers.length; i++){
+                $("#ans" +i).removeClass("answer" + Questions[difficulty][j-1].answers[i].value);
+                $("#ansL" +i).removeClass("answerL" + Questions[difficulty][j-1].answers[i].value);
+            }   
             populate();
-        }    
+        }  
+        }, 1000);  
     }     
 })
 });
